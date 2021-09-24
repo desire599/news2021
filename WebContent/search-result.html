@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="HandheldFriendly" content="true">
+        <meta content="telephone=no" name="format-detection">
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
+        <!--[if (gt IE 9)|!(IE)]><!-->
+        <!-- custom CSS -->
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <!-- END custom CSS -->
+        <!--<![endif]-->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <title>新闻列表</title>
+    </head>
+    <body class="page">
+        <div class="wrapper-sticky-footer">
+            <div class="content-sticky">
+                <!-- Header -->
+                <header id="header" class="header">
+                    <div class="header__top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="wrap-logo">
+                                        <a href="index.html" class="logo"></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-offset-2 col-md-offset-5 col-sm-6 col-md-4 hidden-xs">
+                                    <div class="col-xs-4 col-sm-5">
+                                        <div class="weather">
+                                            <div class="weather__temperature">
+                                                
+                                            </div>
+                                            <div class="weather__city">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-7">
+                                        <div class="exchange">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wsmenucontent overlapblackbg"></div>
+                    <div class="wsmenuexpandermain slideRight">
+                        <a id="navToggle" class="animated-arrow slideLeft">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="header_down">
+                        <div class="container">
+                            <div class="wrapper clearfix bigmegamenu">
+                                <!--Main Menu HTML Code-->
+                                <nav class="wsmenu slideLeft clearfix">
+                                    <ul class="mobile-sub wsmenu-list">
+                                        <li class="visible-xs">
+                                            <form class="navbar-form mob_search" role="search">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="请输入搜索内容">
+                                                </div>
+                                                <button type="submit" class="btn btn-search">
+                                                    <i class="icon-search"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+
+                                        <li class="active">
+                                            <span class="wsmenu-click"></span>
+                                            <a href="index.html">首页</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">政治</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">体育</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">生活</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">时尚</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">娱乐</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="category.html">教育</a>
+                                        </li>
+                                        <li>
+                                            <span class="wsmenu-click"></span>
+                                            <a href="">时尚
+                                        		<span class="arrow"></span>
+                                        	</a>
+                                            <ul class="wsmenu-submenu">
+                                                <li>
+                                                    <a href="404.html">女性</a>
+                                                </li>
+                                                <li>
+                                                    <a href="category.html">育儿</a>
+                                                </li>
+                                                <li>
+                                                    <a href="news.html">医药</a>
+                                                </li>
+                                                <li>
+                                                    <a href="search-result.html">美容</a>
+                                                </li>
+                                                <li>
+                                                    <a href="full-width.html">健康</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="navbar-right hidden-xs">
+                                            <form class="navbar-form " role="search">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="请输入搜索内容">
+                                                </div>
+                                                <button type="submit" class="btn btn-search">
+                                                    <i class="icon-search"></i>
+                                                    <br>搜索
+                                                </button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <div class="visible-xs col-sm-offset-5 col-sm-4">
+                                                <div class="col-sm-5">
+                                                    <div class="weather">
+                                                        <div class="weather__temperature">
+                                                            
+                                                        </div>
+                                                        <div class="weather__city">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="exchange">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!--Menu HTML Code-->
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- END header -->
+                <!-- content-->
+                <div class="wrap wrap_gray pt20">
+                    <div class="container">
+						<div class="page-header">
+							<h1>搜索结果
+								<small></small>
+							</h1>
+						</div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news2.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">国际</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">特朗普就被捕加拿大人向中方求情？外交部回应</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news3.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">国内</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">又一央企巨无霸诞生 中国船业“航母”要正式起航</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news4.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <i class="icon-play"></i>
+                                            <p class="news__category yellow-line">军事</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">俄亮“杀器”震慑北约 俄媒：可将美得州夷为平地</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news5.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">国内</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">辽宁开原强龙卷风已致6死190余人受伤</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news6.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <i class="icon-play"></i>
+                                            <p class="news__category yellow-line">国际</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">特朗普就被捕加拿大人向中方求情？外交部：劝加方不要太天真</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news7.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">军事</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">“南船”中船集团、“北船”中船重工要合并了。</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news8.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <i class="icon-play"></i>
+                                            <p class="news__category yellow-line">军事</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">北约在俄“家门口”启动两场军演 俄频亮“大杀器”反制北约军演</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+													<i class="icon-eye"></i>2.3k
+												</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news9.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">国内</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">开原强龙卷致6死190余人受伤 #酒店为龙卷风灾民办免费住宿#</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news10.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">财经</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">央企战略性重组加速央地合作 推进产业链优化</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news11.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">经济</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">新能源车发展规划正在推进 氢燃料电池汽车获肯定</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news12.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">经济</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">国务院:赋予自贸区更大改革自主权 新增跨境电商试点</p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumbnail thumbnail_small">
+                                    <a href="news.html" class="thumbnail__link">
+                                        <img src="img/content/news13.jpg" height="153" width="270" alt="News">
+                                    </a>
+                                    <div class="caption thumbnail__caption">
+                                        <div class="news caption__news">
+                                            <p class="news__category yellow-line">国际</p>
+                                            <a href="news.html" class="news__link">
+                                                <p class="news__text">科学家预测2100年人类长相 脸上多了这个 </p>
+                                            </a>
+                                        </div>
+                                        <div class="posted">
+                                            <span class="posted__date">今天, 12:30</span>
+                                            <ul class="posted__icon">
+                                                <li>
+                                                    <span>
+                                                <i class="icon-comment-empty"></i>29
+                                            </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                <i class="icon-eye"></i>2.3k
+                                            </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ajax_load">
+                        <i class="icon-arrows-cw"></i>加载更多
+                        <svg width="128" height="40" viewBox="0 0 128 40" xmlns="http://www.w3.org/2000/svg">
+                            <rect x='0' y='0' fill='none' width='128' height='40'></rect>
+                        </svg>
+                    </div>
+                </div>
+                <!-- END content-->
+            </div>
+            <!-- Footer -->
+            <footer class="footer slate_gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+							<p class="copyright">Copyright &copy; 湖北理工学院计算机学院版权所有.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="social navbar-right">
+                                <p class="social__text"></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- END Footer -->
+        <!-- All JavaScript libraries -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Custom JavaScript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
