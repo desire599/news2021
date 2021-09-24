@@ -2,12 +2,16 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.beanutils.BeanUtils;
 
 import cn.hutool.core.util.StrUtil;
 import dbOperation.UserDao;
@@ -43,13 +47,29 @@ public class UserRegist extends HttpServlet {
 		if(!StrUtil.isBlankIfStr(password) && !StrUtil.isBlankIfStr(password1) && password.equals(password1)) {
 			if(!StrUtil.isBlankIfStr(username) && !StrUtil.isBlankIfStr(email)) {
 				User user = new User();
-				user.setUsername(username);
-				user.setPassword(password);
-				user.setEmail(email);
-				user.setImage("a1.png");
-				UserDao userDao = new UserDao();
-				userDao.insert(user);
-				writer.print("<script>alert('注册成功！');location.href='index.html'</script>");
+				try {
+					BeanUtils.populate(user, request.getParameterMap());
+				}catch(IllegalAccessException | InvocationTargetException e) {
+					e.printStackTrace();
+				}
+				System.out.println(user);
+				//从session中获取验证码
+				HttpSession session = request.getSession();
+				String checkcode = (String) session.getAttribute("checkcode");//从session中得到生成的验证码
+				String userCheckcode = user.getUserCheckcode();//获取用户输入的验证码
+				if(!StrUtil.isBlankIfStr(userCheckcode) && !StrUtil.isBlankIfStr(checkcode) && userCheckcode.equalsIgnoreCase(checkcode)) {
+					user.setUsername(username);
+					user.setPassword(password);
+					user.setEmail(email);
+					user.setImage("a1.png");
+					UserDao userDao = new UserDao();
+					userDao.insert(user);
+					writer.print("<script>alert('注册成功！');location.href='index.html'</script>");
+				}else {
+					writer.print("<script>alert('验证码错误！');location.href='regist.html'</script>");
+				}
+
+				
 			}else {
 				writer.print("<script>alert('用户名或邮箱不能为空！');location.href='regist.html'</script>");
 			}

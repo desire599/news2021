@@ -62,4 +62,13 @@
     	<servlet-name>UserRegist</servlet-name>
     	<url-pattern>/UserRegist</url-pattern>
     </servlet-mapping>
+    
+    	<servlet>
+    	<servlet-name>CheckCode</servlet-name>
+    	<servlet-class>servlet.CheckCode</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>CheckCode</servlet-name>
+    	<url-pattern>/CheckCode</url-pattern>
+    </servlet-mapping>
 </web-app>

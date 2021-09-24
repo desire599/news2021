@@ -6,10 +6,13 @@ public class User {
 	private int uid;
 	private String username;
 	private String password;
+	private String password1;
 	private String image;
 	private Data regtime;
 	private String email;
 	private int type;
+	private String userCheckcode;
+	
 	
 	public int getUid() {
 		return this.uid;
@@ -60,6 +63,18 @@ public class User {
 	public int setType(int type) {
 		this.type = type;
 		return this.type;
+	}
+	public String getUserCheckcode() {
+		return this.userCheckcode;
+	}
+	public void setUserCheckcode(String userCheckcode) {
+		this.userCheckcode = userCheckcode;
+	}
+	public String getPassword1() {
+		return this.password1;
+	}
+	public void setPassword1(String password1) {
+		this.password1 = password1;
 	}
 	
 }
