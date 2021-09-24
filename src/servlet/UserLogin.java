@@ -3,7 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.text.SimpleDateFormat;
+//import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
 import dbOperation.UserDao;
 /**
  * Servlet implementation class UserLogin
@@ -46,8 +48,9 @@ public class UserLogin extends HttpServlet {
 				Cookie lastAccess=null;//上一次访问的时间信息
 				String lastAccessTime = "";
 				Date date = new Date();//记录当前的系统时间
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				String dateStr = format.format(date);//格式化当前的系统时间
+//				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//				String dateStr = format.format(date);//格式化当前的系统时间
+				String dateStr = DateUtil.format(date, DatePattern.NORM_DATETIME_PATTERN);
 				Cookie[] cookies = request.getCookies();
 				if(cookies != null) {
 					for(Cookie cookie:cookies) {

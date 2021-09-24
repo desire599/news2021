@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.hutool.core.util.StrUtil;
 import dbOperation.UserDao;
 import model.User;
 
@@ -39,8 +40,8 @@ public class UserRegist extends HttpServlet {
 		String email = request.getParameter("email");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter writer = response.getWriter();
-		if(password != "" && password1 != "" && password.equals(password1)) {
-			if(username != "" && email != "") {
+		if(!StrUtil.isBlankIfStr(password) && !StrUtil.isBlankIfStr(password1) && password.equals(password1)) {
+			if(!StrUtil.isBlankIfStr(username) && !StrUtil.isBlankIfStr(email)) {
 				User user = new User();
 				user.setUsername(username);
 				user.setPassword(password);
