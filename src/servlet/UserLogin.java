@@ -11,10 +11,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import dbOperation.UserDao;
+import model.User;
 /**
  * Servlet implementation class UserLogin
  */
@@ -43,8 +45,13 @@ public class UserLogin extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		UserDao UserQuery=new UserDao();
 		if(!username.equals("") && !password.equals("")) {
-			boolean exist=UserQuery.existUser(username,password);
-			if(exist) {
+			//boolean exist=UserQuery.existUser(username,password);
+			User user = UserQuery.getUser(username,password);
+			//if(exist) {
+			if(user != null) {
+				HttpSession session = request.getSession();
+				session.setAttribute("userInfo", user);
+				//session.setAttribute("userInfo1", "test");
 				Cookie lastAccess=null;//上一次访问的时间信息
 				String lastAccessTime = "";
 				Date date = new Date();//记录当前的系统时间
@@ -74,9 +81,11 @@ public class UserLogin extends HttpServlet {
 				//设置响应，发送至客户端
 				response.addCookie(lastAccess);
 				if(lastAccessTime.equals("")) {
-					writer.print("<script>alert('用户名密码正确！correct');location.href='center.html'</script>");
+					//writer.print("<script>alert('用户名密码正确！correct');location.href='center.html'</script>");
+					writer.print("<script>alert('用户名密码正确！correct');location.href='center.jsp'</script>");
 				}else {
-					String r = "<script>alert('用户名密码正确！correct 您上次访问时间是"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.html'</script>";
+					//String r = "<script>alert('用户名密码正确！correct 您上次访问时间是"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.html'</script>";
+					String r = "<script>alert('用户名密码正确！correct 您上次访问时间是"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.jsp'</script>";
 					System.out.println(r);
 					writer.print(r);
 				}

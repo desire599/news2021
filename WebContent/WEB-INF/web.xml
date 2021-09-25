@@ -63,12 +63,21 @@
     	<url-pattern>/UserRegist</url-pattern>
     </servlet-mapping>
     
-    	<servlet>
+	<servlet>
     	<servlet-name>CheckCode</servlet-name>
     	<servlet-class>servlet.CheckCode</servlet-class>
     </servlet>
     <servlet-mapping>
     	<servlet-name>CheckCode</servlet-name>
     	<url-pattern>/CheckCode</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>UserUpdate</servlet-name>
+    	<servlet-class>servlet.UserUpdate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>UserUpdate</servlet-name>
+    	<url-pattern>/UserUpdate</url-pattern>
     </servlet-mapping>
 </web-app>

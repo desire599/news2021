@@ -1,6 +1,7 @@
 package model;
 
-import javax.xml.crypto.Data;
+import java.sql.Date;
+
 
 public class User {
 	private int uid;
@@ -8,73 +9,87 @@ public class User {
 	private String password;
 	private String password1;
 	private String image;
-	private Data regtime;
+	private Date regtime;
 	private String email;
 	private int type;
 	private String userCheckcode;
 	
 	
+
+	public void showUser() {
+		System.out.println("uid:"+uid+" username:"+username+" password:"+password+" image:"+image+" regtime:"+regtime+" email:"+email+" type:"+type+" userCheckcode:"+userCheckcode);
+	}
+
 	public int getUid() {
-		return this.uid;
+		return uid;
 	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
 	public String getUsername() {
-		return this.username;
+		return username;
 	}
-	public String getPassword() {
-		return this.password;
-	}
-	public String getImage() {
-		return this.image;
-	}
-	public Data getRegtime() {
-		return this.regtime;
-	}
-	public String getEmail() {
-		return this.email;
-	}
-	public int getType() {
-		return this.type;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
-	public int setUid(int uid) {
-		this.uid = uid;
-		return this.uid;
+	public String getPassword() {
+		return password;
 	}
-	public String setUsername(String username) {
-		this.username = username;
-		return this.username;
-	}
-	public String setPassword(String password) {
+
+	public void setPassword(String password) {
 		this.password = password;
-		return this.password;
 	}
-	public String setImage(String image) {
-		this.image = image;
-		return this.image;
-	}
-	public Data setRegtime(Data regtime) {
-		this.regtime = regtime;
-		return this.regtime;
-	}
-	public String setEmail(String email) {
-		this.email = email;
-		return this.email;
-	}
-	public int setType(int type) {
-		this.type = type;
-		return this.type;
-	}
-	public String getUserCheckcode() {
-		return this.userCheckcode;
-	}
-	public void setUserCheckcode(String userCheckcode) {
-		this.userCheckcode = userCheckcode;
-	}
+	
 	public String getPassword1() {
-		return this.password1;
+		return password1;
 	}
+
 	public void setPassword1(String password1) {
 		this.password1 = password1;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	public Date getRegetime() {
+		return regtime;
+	}
+
+	public void setRegtime(Date regtime) {
+		this.regtime = regtime;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+	
+	public String getUserCheckcode() {
+		return email;
+	}
+
+	public void setUserCheckcode(String userCheckcode) {
+		this.userCheckcode = userCheckcode;
 	}
 	
 }
