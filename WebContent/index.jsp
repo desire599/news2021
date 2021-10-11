@@ -187,15 +187,15 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="thumbnail thumbnail_big">
-                                <img src="img/content/news1.jpg" height="350" width="560" alt="News">
+                                <img src="/pic/${newsList[0].pictures }" height="350" width="560" alt="News">
                                 <div class="caption thumbnail__caption">
                                     <div class="news caption__news">
-                                        <p class="news__category yellow-line">财经</p>
-                                        <a href="#" class="news__head">央企战略性重组加速央地合作 推进产业链优化</a>
-                                        <p class="news__desc">央企战略性重组加速央地合作 推进产业链优化</p>
+                                        <p class="news__category yellow-line">${newsList[0].kindName}</p>
+                                        <a href="#" class="news__head">${newsList[0].title }</a>
+                                        
                                     </div>
                                     <div class="posted">
-                                        <span class="posted__date">今天, 16:37</span>
+                                        <span class="posted__date">${newsList[0].time }</span>
                                         <ul class="posted__icon">
                                             <li>
                                                 <span>
@@ -212,251 +212,110 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news2.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <p class="news__category yellow-line">经济</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">新能源车发展规划正在推进 氢燃料电池汽车获肯定</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 12:11</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>11
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>1.1k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news3.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <p class="news__category yellow-line">经济</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">国务院:赋予自贸区更大改革自主权 新增跨境电商试点</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 19:30</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>294
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>2.9k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news4.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <i class="icon-play"></i>
-                                        <p class="news__category yellow-line">国际</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">科学家预测2100年人类长相 脸上多了这个 (视频)</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 2:39</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>9
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>1.3k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news5.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <p class="news__category yellow-line">国际</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">德国防长将任欧盟委员会主席?还是个对华“鹰派”</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 14:34</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>58
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>8.8k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+						<c:forEach items="${newsList }" var="news" begin="1" end="4">
+							<div class="col-sm-3">
+	                            <div class="thumbnail thumbnail_small">
+	                                <a href="news.html" class="thumbnail__link">
+	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
+	                                </a>
+	                                <div class="caption thumbnail__caption">
+	                                    <div class="news caption__news">
+	                                        <p class="news__category yellow-line">${news.kindName }</p>
+	                                        <a href="news.html" class="news__link">
+	                                            <p class="news__text">${news.title }</p>
+	                                        </a>
+	                                    </div>
+	                                    <div class="posted">
+	                                        <span class="posted__date">${news.time }</span>
+	                                        <ul class="posted__icon">
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-comment-empty"></i>58
+	                                            </span>
+	                                            </li>
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-eye"></i>8.8k
+	                                            </span>
+	                                            </li>
+	                                        </ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+						</c:forEach> 
+                        
                     </div>
                     <div class="row">
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news6.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <i class="icon-play"></i>
-                                        <p class="news__category yellow-line">军事</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">澳媒：中国军队具备良好条件 阻止96年台海危机重现</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 12:37</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>20
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>1.2k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news7.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <p class="news__category yellow-line">生活</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">这辈子一定要去的40个地方 你还差几个？</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 11:30</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>21
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>1.9k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news8.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <i class="icon-play"></i>
-                                        <p class="news__category yellow-line">教育</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">美国新增4所大学宣布将接受高考成绩 (视频)</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 10:36</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>17
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>2.0k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumbnail thumbnail_small">
-                                <a href="news.html" class="thumbnail__link">
-                                    <img src="img/content/news9.jpg" height="153" width="270" alt="News">
-                                </a>
-                                <div class="caption thumbnail__caption">
-                                    <div class="news caption__news">
-                                        <p class="news__category yellow-line">旅游</p>
-                                        <a href="news.html" class="news__link">
-                                            <p class="news__text">在澳门过暑假 今夏玩点不一样的</p>
-                                        </a>
-                                    </div>
-                                    <div class="posted">
-                                        <span class="posted__date">今天, 12:30</span>
-                                        <ul class="posted__icon">
-                                            <li>
-                                                <span>
-                                                <i class="icon-comment-empty"></i>29
-                                            </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                <i class="icon-eye"></i>2.3k
-                                            </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <c:forEach items="${newsList }" var="news" begin="5" end="8">
+	                    <div class="col-sm-3">
+	                            <div class="thumbnail thumbnail_small">
+	                                <a href="news.html" class="thumbnail__link">
+	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
+	                                </a>
+	                                <div class="caption thumbnail__caption">
+	                                    <div class="news caption__news">
+	                                        <p class="news__category yellow-line">${news.kindName }</p>
+	                                        <a href="news.html" class="news__link">
+	                                            <p class="news__text">${news.title }</p>
+	                                        </a>
+	                                    </div>
+	                                    <div class="posted">
+	                                        <span class="posted__date">${news.time }</span>
+	                                        <ul class="posted__icon">
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-comment-empty"></i>29
+	                                            </span>
+	                                            </li>
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-eye"></i>2.3k
+	                                            </span>
+	                                            </li>
+	                                        </ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+                    </c:forEach>
+                    
+                    <c:forEach items="${newsList }" var="news" begin="9" end="12">
+	                    <div class="col-sm-3">
+	                            <div class="thumbnail thumbnail_small">
+	                                <a href="news.html" class="thumbnail__link">
+	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
+	                                </a>
+	                                <div class="caption thumbnail__caption">
+	                                    <div class="news caption__news">
+	                                        <p class="news__category yellow-line">${news.kindName }</p>
+	                                        <a href="news.html" class="news__link">
+	                                            <p class="news__text">${news.title }</p>
+	                                        </a>
+	                                    </div>
+	                                    <div class="posted">
+	                                        <span class="posted__date">${news.time }</span>
+	                                        <ul class="posted__icon">
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-comment-empty"></i>29
+	                                            </span>
+	                                            </li>
+	                                            <li>
+	                                                <span>
+	                                                <i class="icon-eye"></i>2.3k
+	                                            </span>
+	                                            </li>
+	                                        </ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+                    </c:forEach>
+                       
+                        
+                       
+                      
                     </div>
                 </div>
                 <!-- btn load-->
