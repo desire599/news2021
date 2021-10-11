@@ -80,4 +80,13 @@
     	<servlet-name>UserUpdate</servlet-name>
     	<url-pattern>/UserUpdate</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>Index</servlet-name>
+    	<servlet-class>servlet.Index</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>Index</servlet-name>
+    	<url-pattern>/Index</url-pattern>
+    </servlet-mapping>
 </web-app>

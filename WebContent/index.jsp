@@ -99,55 +99,15 @@
 
                                 <li class="active">
                                     <span class="wsmenu-click"></span>
-                                    <a href="index.html">首页</a>
+                                    <a href="Index">首页</a>
                                 </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">政治</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">体育</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">生活</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">时尚</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">娱乐</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="category.html">教育</a>
-                                </li>
-                                <li>
-                                    <span class="wsmenu-click"></span>
-                                    <a href="">时尚
-										<span class="arrow"></span>
-									</a>
-                                    <ul class="wsmenu-submenu">
-                                        <li>
-                                            <a href="404.html">女性</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">育儿</a>
-                                        </li>
-                                        <li>
-                                            <a href="news.html">医药</a>
-                                        </li>
-                                        <li>
-                                            <a href="search-result.html">美容</a>
-                                        </li>
-                                        <li>
-                                            <a href="full-width.html">健康</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <c:forEach items="${kindList }" var="kind">
+                                	<li class="active">
+	                                   <span class="wsmenu-click"></span>
+	                                   <a href="category.html">${kind.content }</a>
+	                                </li>
+                                </c:forEach>
+                                
                                 <li class="navbar-right hidden-xs">
                                     <form class="navbar-form" role="search">
                                         <div class="form-group dropdown">
