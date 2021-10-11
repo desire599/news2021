@@ -191,7 +191,7 @@
                                 <div class="caption thumbnail__caption">
                                     <div class="news caption__news">
                                         <p class="news__category yellow-line">${newsList[0].kindName}</p>
-                                        <a href="#" class="news__head">${newsList[0].title }</a>
+                                        <a href="NewsDetail?newsid=${newsList[0].newsId }" class="news__head">${newsList[0].title }</a>
                                         
                                     </div>
                                     <div class="posted">
@@ -215,13 +215,13 @@
 						<c:forEach items="${newsList }" var="news" begin="1" end="4">
 							<div class="col-sm-3">
 	                            <div class="thumbnail thumbnail_small">
-	                                <a href="news.html" class="thumbnail__link">
+	                                <a href="NewsDetail?newsid=${news.newsId }" class="thumbnail__link">
 	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
 	                                </a>
 	                                <div class="caption thumbnail__caption">
 	                                    <div class="news caption__news">
 	                                        <p class="news__category yellow-line">${news.kindName }</p>
-	                                        <a href="news.html" class="news__link">
+	                                        <a href="NewsDetail?newsid=${news.newsId }" class="news__link">
 	                                            <p class="news__text">${news.title }</p>
 	                                        </a>
 	                                    </div>
@@ -250,13 +250,13 @@
                     <c:forEach items="${newsList }" var="news" begin="5" end="8">
 	                    <div class="col-sm-3">
 	                            <div class="thumbnail thumbnail_small">
-	                                <a href="news.html" class="thumbnail__link">
+	                                <a href="NewsDetail?newsid=${news.newsId }" class="thumbnail__link">
 	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
 	                                </a>
 	                                <div class="caption thumbnail__caption">
 	                                    <div class="news caption__news">
 	                                        <p class="news__category yellow-line">${news.kindName }</p>
-	                                        <a href="news.html" class="news__link">
+	                                        <a href="NewsDetail?newsid=${news.newsId }" class="news__link">
 	                                            <p class="news__text">${news.title }</p>
 	                                        </a>
 	                                    </div>
@@ -283,13 +283,13 @@
                     <c:forEach items="${newsList }" var="news" begin="9" end="12">
 	                    <div class="col-sm-3">
 	                            <div class="thumbnail thumbnail_small">
-	                                <a href="news.html" class="thumbnail__link">
+	                                <a href="NewsDetail?newsid=${news.newsId }" class="thumbnail__link">
 	                                    <img src="/pic/${news.pictures }" height="153" width="270" alt="News">
 	                                </a>
 	                                <div class="caption thumbnail__caption">
 	                                    <div class="news caption__news">
 	                                        <p class="news__category yellow-line">${news.kindName }</p>
-	                                        <a href="news.html" class="news__link">
+	                                        <a href="NewsDetail?newsid=${news.newsId }" class="news__link">
 	                                            <p class="news__text">${news.title }</p>
 	                                        </a>
 	                                    </div>

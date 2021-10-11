@@ -89,4 +89,13 @@
     	<servlet-name>Index</servlet-name>
     	<url-pattern>/Index</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>NewsDetail</servlet-name>
+    	<servlet-class>servlet.NewsDetail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>NewsDetail</servlet-name>
+    	<url-pattern>/NewsDetail</url-pattern>
+    </servlet-mapping>
 </web-app>

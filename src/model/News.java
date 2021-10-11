@@ -15,6 +15,7 @@ public class News {
 	private String video;
 	private Date time;
 	private String kindName;
+	private String username;
 	public int getNewsId() {
 		return newsId;
 	}
@@ -86,5 +87,11 @@ public class News {
 	}
 	public void setKindName(String kindName) {
 		this.kindName = kindName;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }
