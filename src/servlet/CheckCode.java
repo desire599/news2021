@@ -33,10 +33,10 @@ public class CheckCode extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		VerifyCode verifyCode = new VerifyCode();
 		BufferedImage image = verifyCode.getImage();
-		String text = verifyCode.getText();//Í¼Æ¬ÖĞËæ»úµÄ4Î»ÑéÖ¤Âë
+		String text = verifyCode.getText();//å›¾ç‰‡ä¸­éšæœºçš„4ä½éªŒè¯ç 
 		HttpSession session = request.getSession();
-		session.setAttribute("checkcode", text);//ÑéÖ¤Âë´æ´¢ÔÚsessionÖĞ
-		VerifyCode.output(image, response.getOutputStream());//½«imageÊä³öµ½Êä³öÁ÷
+		session.setAttribute("checkcode", text);//éªŒè¯ç å­˜å‚¨åœ¨sessionä¸­
+		VerifyCode.output(image, response.getOutputStream());//å°†imageè¾“å‡ºåˆ°è¾“å‡ºæµ
 	}
 
 	/**

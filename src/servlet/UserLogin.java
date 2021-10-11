@@ -52,50 +52,50 @@ public class UserLogin extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("userInfo", user);
 				//session.setAttribute("userInfo1", "test");
-				Cookie lastAccess=null;//ÉÏÒ»´Î·ÃÎÊµÄÊ±¼äĞÅÏ¢
+				Cookie lastAccess=null;//ä¸Šä¸€æ¬¡è®¿é—®çš„æ—¶é—´ä¿¡æ¯
 				String lastAccessTime = "";
-				Date date = new Date();//¼ÇÂ¼µ±Ç°µÄÏµÍ³Ê±¼ä
+				Date date = new Date();//è®°å½•å½“å‰çš„ç³»ç»Ÿæ—¶é—´
 //				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//				String dateStr = format.format(date);//¸ñÊ½»¯µ±Ç°µÄÏµÍ³Ê±¼ä
+//				String dateStr = format.format(date);//æ ¼å¼åŒ–å½“å‰çš„ç³»ç»Ÿæ—¶é—´
 				String dateStr = DateUtil.format(date, DatePattern.NORM_DATETIME_PATTERN);
 				Cookie[] cookies = request.getCookies();
 				if(cookies != null) {
 					for(Cookie cookie:cookies) {
-						//ÅĞ¶ÏÊÇ·ñÓĞÉÏ´Î·ÃÎÊµÄcookie
+						//åˆ¤æ–­æ˜¯å¦æœ‰ä¸Šæ¬¡è®¿é—®çš„cookie
 						if(cookie.getName().equals("lastAccess")) {
 							lastAccess = cookie;
 							break;
 						}
 					}
 				}
-				//Ã»ÓĞÉÏ´Î·ÃÎÊ£¬µÚÒ»´Î·ÃÎÊ
+				//æ²¡æœ‰ä¸Šæ¬¡è®¿é—®ï¼Œç¬¬ä¸€æ¬¡è®¿é—®
 				if(lastAccess == null) {
 					lastAccess = new Cookie("lastAccess",dateStr);
-					lastAccess.setMaxAge(60*60*24);//ÉèÖÃcookie´æ´¢Ê±¼äÎªÒ»Ìì
+					lastAccess.setMaxAge(60*60*24);//è®¾ç½®cookieå­˜å‚¨æ—¶é—´ä¸ºä¸€å¤©
 				}else {
-					//lastAccess²»Îª¿Õ£¬´ú±íÔÙ´Î·ÃÎÊ
+					//lastAccessä¸ä¸ºç©ºï¼Œä»£è¡¨å†æ¬¡è®¿é—®
 					lastAccessTime = lastAccess.getValue();
-					//ÔÙ´Î·ÃÎÊ¸üĞÂcookieÖĞµÄ·ÃÎÊÊ±¼ä
+					//å†æ¬¡è®¿é—®æ›´æ–°cookieä¸­çš„è®¿é—®æ—¶é—´
 					lastAccess.setValue(dateStr);
 				}
-				//ÉèÖÃÏìÓ¦£¬·¢ËÍÖÁ¿Í»§¶Ë
+				//è®¾ç½®å“åº”ï¼Œå‘é€è‡³å®¢æˆ·ç«¯
 				response.addCookie(lastAccess);
 				if(lastAccessTime.equals("")) {
-					//writer.print("<script>alert('ÓÃ»§ÃûÃÜÂëÕıÈ·£¡correct');location.href='center.html'</script>");
-					writer.print("<script>alert('ÓÃ»§ÃûÃÜÂëÕıÈ·£¡correct');location.href='center.jsp'</script>");
+					//writer.print("<script>alert('ç”¨æˆ·åå¯†ç æ­£ç¡®ï¼correct');location.href='center.html'</script>");
+					writer.print("<script>alert('ç”¨æˆ·åå¯†ç æ­£ç¡®ï¼correct');location.href='center.jsp'</script>");
 				}else {
-					//String r = "<script>alert('ÓÃ»§ÃûÃÜÂëÕıÈ·£¡correct ÄúÉÏ´Î·ÃÎÊÊ±¼äÊÇ"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.html'</script>";
-					String r = "<script>alert('ÓÃ»§ÃûÃÜÂëÕıÈ·£¡correct ÄúÉÏ´Î·ÃÎÊÊ±¼äÊÇ"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.jsp'</script>";
+					//String r = "<script>alert('ç”¨æˆ·åå¯†ç æ­£ç¡®ï¼correct æ‚¨ä¸Šæ¬¡è®¿é—®æ—¶é—´æ˜¯"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.html'</script>";
+					String r = "<script>alert('ç”¨æˆ·åå¯†ç æ­£ç¡®ï¼correct æ‚¨ä¸Šæ¬¡è®¿é—®æ—¶é—´æ˜¯"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.jsp'</script>";
 					System.out.println(r);
 					writer.print(r);
 				}
 				
 				
 			}else {
-				writer.print("<script>alert('ÓÃ»§Ãû»òÃÜÂë´íÎó£¡error');location.href='index.html'</script>");
+				writer.print("<script>alert('ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼error');location.href='index.html'</script>");
 			}
 		}else {
-			writer.print("<script>alert('ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ£¡');location.href='index.html'</script>");
+			writer.print("<script>alert('ç”¨æˆ·åæˆ–å¯†ç ä¸èƒ½ä¸ºç©ºï¼');location.href='index.html'</script>");
 		}
 		
 									

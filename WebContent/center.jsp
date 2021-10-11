@@ -186,7 +186,8 @@
                         %>
                             <p class="news-tabs__title h2">
 								<img src="img/content/qq1.png" />
-								<span><%=user.getUsername() %></span>
+								<%-- <span><%=user.getUsername() %></span> --%>
+								<span>${userInfo.username }</span>
 							</p>
 							
                             <a href="center.html" class="list-group-item">
@@ -215,8 +216,10 @@
 						<form role="form" action="UserUpdate" method="post">
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="name">用户名</label>
-								<input type="text" class="form-control" name="username" value="<%=user.getUsername() %>">
-								<input type="hidden" class="form-control" name="uid" value="<%=user.getUid() %>">
+								<%-- <input type="text" class="form-control" name="username" value="<%=user.getUsername() %>"> --%>
+								<input type="text" class="form-control" name="username" value="${userInfo.username }">
+								<%-- <input type="hidden" class="form-control" name="uid" value="<%=user.getUid() %>"> --%>
+								<input type="hidden" class="form-control" name="uid" value="${userInfo.uid }">
 							</div>
 							
 							<div class="form-group">
@@ -226,14 +229,16 @@
 							</div>
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="name">邮箱</label>
-								<input type="text" class="form-control" name="email" value="<%=user.getEmail() %>">
+								<%-- <input type="text" class="form-control" name="email" value="<%=user.getEmail() %>"> --%>
+								<input type="text" class="form-control" name="email" value="${userInfo.email }">
 								<p class="help-block">
-								<%
+								<%-- <%
 									String msg = (String)request.getAttribute("msg");
 									if(msg != null){
 										out.print(msg);
 									}
-								%>
+								%> --%>
+								${msg }
 								</p>
 							</div>
 							

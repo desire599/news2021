@@ -32,7 +32,7 @@ public class TestGetServletContext extends HttpServlet {
 		System.out.println("encodeing:"+encoding);
 		response.setContentType("text/html;charset="+encoding);
 		response.getWriter().append(encoding);
-		response.getWriter().append("系统正忙，请稍后再试");
+		response.getWriter().append("绯荤粺姝ｅ繖锛岃绋嶅悗鍐嶈瘯");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 

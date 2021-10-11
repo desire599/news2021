@@ -36,7 +36,7 @@ public class UserUpdate extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//»ñÈ¡Ò³Ãæ´«µİµÄÊı¾İ
+		//è·å–é¡µé¢ä¼ é€’çš„æ•°æ®
 		User user = new User();
 		try {
 			BeanUtils.populate(user, request.getParameterMap());
@@ -44,13 +44,13 @@ public class UserUpdate extends HttpServlet {
 			e.printStackTrace();
 		}
 		System.out.println(request.getParameter("username"));
-		//µ÷ÓÃUserDao.java ÖĞµÄ·½·¨£¬¸üĞÂĞÅÏ¢µ½Êı¾İ¿â
+		//è°ƒç”¨UserDao.java ä¸­çš„æ–¹æ³•ï¼Œæ›´æ–°ä¿¡æ¯åˆ°æ•°æ®åº“
 		UserDao userDao = new UserDao();
 		userDao.update(user);
 		HttpSession session = request.getSession();
 		session.setAttribute("userInfo", user);
-		//Ìø×ªÒ³Ãæ
-		request.setAttribute("msg", "ĞŞ¸Ä³É¹¦£¡");
+		//è·³è½¬é¡µé¢
+		request.setAttribute("msg", "ä¿®æ”¹æˆåŠŸï¼");
 		request.getRequestDispatcher("center.jsp").forward(request,response);		
 	}
 

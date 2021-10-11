@@ -51,7 +51,7 @@ public class TestServletConfig extends HttpServlet {
 		String encoding =this.servletConfig.getInitParameter("encoding");
 		System.out.println(encoding);
 		ServletContext servletContext=this.getServletContext();
-	    servletContext.setAttribute("user","¹þà¶hello");
+	    servletContext.setAttribute("user","å“ˆå–½hello");
 		response.setContentType("text/html;charset=UTF-8");
 		String user=(String)this.getServletContext().getAttribute("user");
 		System.out.println(user);

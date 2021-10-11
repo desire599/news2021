@@ -17,17 +17,17 @@ public class UserDao {
 		boolean exist=false;
 		try {
 			Connection conn = DBConn.getConn();
-			//SQLÓï¾ä
+			//SQLè¯­å¥
 			String sql="select * from user where username=? and password=?";
-			//´´½¨PreparedStatement
+			//åˆ›å»ºPreparedStatement
 			java.sql.PreparedStatement prepareStatement= conn.prepareStatement(sql);
-			//ÉèÖÃÊ§È¥ÁËÓï¾äÖĞµÄÕ¼Î»·û£¿¶ÔÓ¦µÄÖµ
+			//è®¾ç½®å¤±å»äº†è¯­å¥ä¸­çš„å ä½ç¬¦ï¼Ÿå¯¹åº”çš„å€¼
 			prepareStatement.setString(1, username);
 			prepareStatement.setString(2, password);
-			System.out.println("UserQuery.java 24ĞĞ Ö´ĞĞÁË"+sql+"### username:"+username+"password:"+password);
-			//Ö´ĞĞ²éÑ¯£¬»ñÈ¡²éÑ¯½á¹û¼¯
+			System.out.println("UserQuery.java 24è¡Œ æ‰§è¡Œäº†"+sql+"### username:"+username+"password:"+password);
+			//æ‰§è¡ŒæŸ¥è¯¢ï¼Œè·å–æŸ¥è¯¢ç»“æœé›†
 			java.sql.ResultSet resultSet=prepareStatement.executeQuery();
-			//ÅĞ¶Ï½á¹û¼¯ÖĞÊÇ·ñº¬ÓĞ¶ÔÓ¦µÄ¼ÇÂ¼
+			//åˆ¤æ–­ç»“æœé›†ä¸­æ˜¯å¦å«æœ‰å¯¹åº”çš„è®°å½•
 			if(resultSet.next()) {
 				exist=true;
 			}		
@@ -39,11 +39,11 @@ public class UserDao {
 	public void insert(User user) {
 		try {
 			Connection conn = DBConn.getConn();
-			//SQLÓï¾ä
+			//SQLè¯­å¥
 			String sql="insert into `user`(username,password,image,regtime,email,type)"+"values(?,?,?,NOW(),?,1)";
-			//´´½¨PreparedStatement
+			//åˆ›å»ºPreparedStatement
 			java.sql.PreparedStatement prepareStatement= conn.prepareStatement(sql);
-			//ÉèÖÃÊ§È¥ÁËÓï¾äÖĞµÄÕ¼Î»·û£¿¶ÔÓ¦µÄÖµ
+			//è®¾ç½®å¤±å»äº†è¯­å¥ä¸­çš„å ä½ç¬¦ï¼Ÿå¯¹åº”çš„å€¼
 			prepareStatement.setString(1, user.getUsername());
 			prepareStatement.setString(2, user.getPassword());
 			prepareStatement.setString(3, user.getImage());

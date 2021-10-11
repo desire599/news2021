@@ -222,12 +222,13 @@
 								<label class="col-sm-2 control-label" for="name">确认密码</label>
 								<input type="password" class="form-control" name="password1" placeholder="请输入确认密码">
 								<p class="help-block" style="color:red;">
-								<%
+								<%-- <%
 									String errPasswd = (String)request.getAttribute("errPasswd");
 									if(errPasswd != null){
 										out.print(errPasswd);
 									}
-								%>
+								%> --%>
+								${errPasswd }
 								</p>
 							</div>
 							<div class="form-group">
@@ -243,24 +244,26 @@
 								<label for="inputfile">验证码</label>
 								<input type="text" class="form-control" name="userCheckcode" placeholder="请输入验证码">
 								<p class="help-block" style="color:red;">
-								<%
+								<%-- <%
 									String errCode = (String)request.getAttribute("errCode");
 									if(errCode != null){
 										out.print(errCode);
 									}
-								%>
+								%> --%>
+								${errCode }
 								</p>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-2 control-label" for="name">邮箱</label>
 								<input type="text" class="form-control" id="name" name="email" placeholder="请输入邮箱">
 								<p class="help-block" style="color:red;">
-								<%
+								<%-- <%
 									String errMsg = (String)request.getAttribute("errMsg");
 									if(errMsg != null){
 										out.print(errMsg);
 									}
-								%>
+								%> --%>
+								${errMsg }
 								</p>
 							</div>
 							<button type="submit" class="btn btn-default">提交</button>

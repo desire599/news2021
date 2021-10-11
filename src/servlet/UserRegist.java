@@ -54,10 +54,10 @@ public class UserRegist extends HttpServlet {
 				}
 				//user.showUser();
 				//System.out.println(user);
-				//´ÓsessionÖĞ»ñÈ¡ÑéÖ¤Âë
+				//ä»sessionä¸­è·å–éªŒè¯ç 
 				HttpSession session = request.getSession();
-				String checkcode = (String) session.getAttribute("checkcode");//´ÓsessionÖĞµÃµ½Éú³ÉµÄÑéÖ¤Âë
-				String userCheckcode = user.getUserCheckcode();//»ñÈ¡ÓÃ»§ÊäÈëµÄÑéÖ¤Âë
+				String checkcode = (String) session.getAttribute("checkcode");//ä»sessionä¸­å¾—åˆ°ç”Ÿæˆçš„éªŒè¯ç 
+				String userCheckcode = user.getUserCheckcode();//è·å–ç”¨æˆ·è¾“å…¥çš„éªŒè¯ç 
 				if(!StrUtil.isBlankIfStr(userCheckcode) && !StrUtil.isBlankIfStr(checkcode) && userCheckcode.equalsIgnoreCase(checkcode)) {
 					user.setUsername(username);
 					user.setPassword(password);
@@ -65,28 +65,28 @@ public class UserRegist extends HttpServlet {
 					user.setImage("a1.png");
 					UserDao userDao = new UserDao();
 					userDao.insert(user);
-					//writer.print("<script>alert('×¢²á³É¹¦£¡');location.href='index.html'</script>");
-					request.setAttribute("success", "×¢²á³É¹¦£¡");
+					//writer.print("<script>alert('æ³¨å†ŒæˆåŠŸï¼');location.href='index.html'</script>");
+					request.setAttribute("success", "æ³¨å†ŒæˆåŠŸï¼");
 					request.getRequestDispatcher("regist.jsp").forward(request, response);
 					//writer.print("<script>location.href='index.html'</script>");
 				}else {
-					//writer.print("<script>alert('ÑéÖ¤Âë´íÎó£¡');location.href='regist.html'</script>");
-					request.setAttribute("errCode", "ÑéÖ¤Âë´íÎó£¡");
-					//½«requestºÍresponseÖĞ´æ´¢µÄĞÅÏ¢×ª·¢¸øregist.jspÒ³Ãæ
+					//writer.print("<script>alert('éªŒè¯ç é”™è¯¯ï¼');location.href='regist.html'</script>");
+					request.setAttribute("errCode", "éªŒè¯ç é”™è¯¯ï¼");
+					//å°†requestå’Œresponseä¸­å­˜å‚¨çš„ä¿¡æ¯è½¬å‘ç»™regist.jspé¡µé¢
 					request.getRequestDispatcher("regist.jsp").forward(request, response);
-					// ÖØ¶¨Ïò²»ÄÜrequestºÍresponseÖĞ´æ´¢µÄĞÅÏ¢×ª·¢¸ø regist.jspÒ³Ãæ
+					// é‡å®šå‘ä¸èƒ½requestå’Œresponseä¸­å­˜å‚¨çš„ä¿¡æ¯è½¬å‘ç»™ regist.jspé¡µé¢
 					//response.sendRedirect("regist.jsp");
 				}
 
 				
 			}else {
-				//writer.print("<script>alert('ÓÃ»§Ãû»òÓÊÏä²»ÄÜÎª¿Õ£¡');location.href='regist.html'</script>");
-				request.setAttribute("errMsg", "ÓÃ»§Ãû»òÓÊÏä²»ÄÜÎª¿Õ£¡");
+				//writer.print("<script>alert('ç”¨æˆ·åæˆ–é‚®ç®±ä¸èƒ½ä¸ºç©ºï¼');location.href='regist.html'</script>");
+				request.setAttribute("errMsg", "ç”¨æˆ·åæˆ–é‚®ç®±ä¸èƒ½ä¸ºç©ºï¼");
 				request.getRequestDispatcher("regist.jsp").forward(request, response);
 			}
 		}else {
-			//writer.print("<script>alert('ÃÜÂëºÍÈ·ÈÏÃÜÂë²»Ò»ÖÂ£¡');location.href='regist.html'</script>");
-			request.setAttribute("errPasswd", "ÃÜÂëºÍÈ·ÈÏÃÜÂë²»Ò»ÖÂ£¡");
+			//writer.print("<script>alert('å¯†ç å’Œç¡®è®¤å¯†ç ä¸ä¸€è‡´ï¼');location.href='regist.html'</script>");
+			request.setAttribute("errPasswd", "å¯†ç å’Œç¡®è®¤å¯†ç ä¸ä¸€è‡´ï¼");
 			request.getRequestDispatcher("regist.jsp").forward(request, response);
 		}
 	}
