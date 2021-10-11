@@ -683,15 +683,15 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="name">用户名</label>
-								<input type="text" class="form-control" name="username" id="name" placeholder="请输入用户名">
+								<input type="text" class="form-control" name="username" id="name" value="${cookie.usernameCookie.value }" placeholder="请输入用户名">
 							</div>
 							<div class="form-group">
 								<label for="name">密码</label>
-								<input type="text" class="form-control" name="password" placeholder="请输入密码">
+								<input type="text" class="form-control" name="password" value="${cookie.passwordCookie.value }" placeholder="请输入密码">
 							</div>
 							<div class="checkbox">
 							    <label>
-							      <input type="checkbox" value="remember">记住用户名和密码
+							      <input type="checkbox" name="remember" value="remember">记住用户名和密码
 							    </label>
 							</div>
 						</div>

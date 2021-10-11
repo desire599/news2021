@@ -55,6 +55,16 @@ public class UserLogin extends HttpServlet {
 				Cookie lastAccess=null;//上一次访问的时间信息
 				String lastAccessTime = "";
 				Date date = new Date();//记录当前的系统时间
+				String remember = request.getParameter("remember");
+				if(remember!=null) {
+					//记住用户名和密码，放入cookie中
+					Cookie usernameCookie = new Cookie("usernameCookie",username);
+					Cookie passwordCookie = new Cookie("passwordCookie",password);
+					usernameCookie.setMaxAge(60*60*24);
+					passwordCookie.setMaxAge(60*60*24);
+					response.addCookie(usernameCookie);
+					response.addCookie(passwordCookie);
+				}
 //				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //				String dateStr = format.format(date);//格式化当前的系统时间
 				String dateStr = DateUtil.format(date, DatePattern.NORM_DATETIME_PATTERN);
