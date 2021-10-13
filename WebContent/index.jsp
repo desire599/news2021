@@ -328,7 +328,7 @@
                 <!-- END btn load-->
             </div>
             <!-- /container-->
-        </section>
+        </section>xzx
         <!-- /top news -->
         <section class="wrap wrap_gray">
             <div class="container">
