@@ -92,7 +92,7 @@ public class UserLogin extends HttpServlet {
 				response.addCookie(lastAccess);
 				if(lastAccessTime.equals("")) {
 					//writer.print("<script>alert('用户名密码正确！correct');location.href='center.html'</script>");
-					writer.print("<script>alert('用户名密码正确！correct');location.href='center.jsp'</script>");
+					writer.print("<script>alert('用户名密码正确！correct');location.href='user/center.jsp'</script>");
 				}else {
 					//String r = "<script>alert('用户名密码正确！correct 您上次访问时间是"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.html'</script>";
 					String r = "<script>alert('用户名密码正确！correct 您上次访问时间是"+lastAccessTime+"');console.log('"+lastAccessTime+"');location.href='center.jsp'</script>";
@@ -102,10 +102,10 @@ public class UserLogin extends HttpServlet {
 				
 				
 			}else {
-				writer.print("<script>alert('用户名或密码错误！error');location.href='index.html'</script>");
+				writer.print("<script>alert('用户名或密码错误！error');location.href='Index'</script>");
 			}
 		}else {
-			writer.print("<script>alert('用户名或密码不能为空！');location.href='index.html'</script>");
+			writer.print("<script>alert('用户名或密码不能为空！');location.href='Index'</script>");
 		}
 		
 									

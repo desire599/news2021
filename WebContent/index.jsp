@@ -66,7 +66,7 @@
                                 		</c:otherwise>
                                 	</c:choose>
                                     <c:if test="${userInfo!=null }">
-                                    	<a href="center.jsp">个人中心</a>
+                                    	<a href="${pageContext.request.contextPath }/user/center.jsp">个人中心</a>
                                     </c:if>                                   
                                 </div>
                             </div>

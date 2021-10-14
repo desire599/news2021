@@ -57,7 +57,7 @@ public class UserDao {
 		User user = null;
 		try {
 			Connection conn = DBConn.getConn();
-			String sql = "select uid,email from user where username=? and password=?";
+			String sql = "select uid,email,image from user where username=? and password=?";
 			PreparedStatement prepareStatement = conn.prepareStatement(sql);
 			prepareStatement.setString(1, username);
 			prepareStatement.setString(2, password);
@@ -67,6 +67,7 @@ public class UserDao {
 				user.setUid(resultSet.getInt("uid"));
 				user.setUsername(username);
 				user.setEmail(resultSet.getString("email"));
+				user.setImage(resultSet.getString("image"));
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

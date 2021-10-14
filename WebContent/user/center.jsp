@@ -14,9 +14,9 @@
         <!-- favicon -->
         <link rel="shortcut icon" type="image/png" href="favicon.png" />
         <!--[if (gt IE 9)|!(IE)]><!-->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!-- custom CSS -->
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="../css/main.css" rel="stylesheet" type="text/css" />
         <!-- END custom CSS -->
         <!--<![endif]-->
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -185,7 +185,7 @@
                         	User user = (User)session.getAttribute("userInfo");
                         %>
                             <p class="news-tabs__title h2">
-								<img src="img/content/qq1.png" />
+								<img src="/pic/${userInfo.image }" />
 								<%-- <span><%=user.getUsername() %></span> --%>
 								<span>${userInfo.username }</span>
 							</p>
@@ -267,9 +267,9 @@
         </footer>
         <!-- END Footer -->
         <!-- All JavaScript libraries -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 		<!-- Custom JavaScript -->
-        <script src="js/main.js"></script>
+        <script src="../js/main.js"></script>
     </body>
 </html>
