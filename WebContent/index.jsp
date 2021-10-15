@@ -54,6 +54,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-7">
                                 <div class="exchange">
+                                	<a href="#">当前在线人数：${onlineNum }</a>
                                 	<c:choose>
                                 		<c:when test="${userInfo!=null }">
                                 			<a href="#">${userInfo.username }</a>
