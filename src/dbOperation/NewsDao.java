@@ -7,17 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
 import model.News;
+import util.C3P0Util;
 
 public class NewsDao {
 	Connection conn=DBConn.getConn();
+	private QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 	public List<News> getList(int limit) {
 		List<News> list = new ArrayList<News>();
 		try {
-			Connection conn = DBConn.getConn();
+			//Connection conn = DBConn.getConn();
 			String sql="select n.newsid,n.title,n.time,k.content as kindName,n.pictures from news n "
 					+"left join kind k on n.kindId=k.kindId order by newsId desc limit ?";
-			PreparedStatement prepareStatement= conn.prepareStatement(sql);
+			/*PreparedStatement prepareStatement= conn.prepareStatement(sql);
 			prepareStatement.setInt(1, limit);
 			ResultSet resultSet=prepareStatement.executeQuery();
 			News news = null;
@@ -30,7 +35,8 @@ public class NewsDao {
 				news.setKindName(resultSet.getString(4));
 				news.setPictures(resultSet.getString(5));
 				list.add(news);
-			}		
+			}*/		
+			list = qr.query(sql, new BeanListHandler<News>(News.class),limit);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -39,11 +45,11 @@ public class NewsDao {
 	public News getByNewsid(String newsid) {
 		News news = null;
 		try {
-			Connection conn = DBConn.getConn();
+			//Connection conn = DBConn.getConn();
 			String sql="select n.*,k.content as kindName,u.username from news n "
 					+"left join kind k on n.kindId=k.kindId "
 					+"left join user u on n.uid=u.uid where newsId=?";
-			PreparedStatement prepareStatement= conn.prepareStatement(sql);
+			/*PreparedStatement prepareStatement= conn.prepareStatement(sql);
 			prepareStatement.setString(1, newsid);
 			ResultSet resultSet=prepareStatement.executeQuery();
 			while(resultSet.next()) {
@@ -58,8 +64,8 @@ public class NewsDao {
 				news.setFrom(resultSet.getString("from"));
 				news.setVideo( resultSet.getString("video"));
 				news.setUsername( resultSet.getString("username"));
-
-			}		
+			}*/		
+			news = (News) qr.query(sql, new BeanListHandler<News>(News.class),newsid);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
